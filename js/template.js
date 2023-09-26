@@ -1,6 +1,6 @@
-function slimeTemplate({Name,avatar,website,Price,company,Texture,Scent,size,Included, ...slime}){
+function UserTemplate({address,avatar,first_name,last_name,email,date_of_birth,employment, ...users}){
     // employee is a placeholder so can name it whatever you want to 
-    console.log(slime)
+    console.log(users)
     const template = `
     
     <div class="slime">
@@ -9,23 +9,21 @@ function slimeTemplate({Name,avatar,website,Price,company,Texture,Scent,size,Inc
           
           <div class="profile">
             <div class="top-card">
-            <img src="${avatar}" alt="${Name}" />
-            <h2>${Name}</h2>
+            <img src="${avatar}" alt="${first_name}" />
+            <h2>${first_name}  ${last_name}</h2>
             </div>
             <div class="bio">
               <ul>
-              <li><span>Company:</span> ${company}</li>
-              <li><span>Website:</span> <a href="${website}">${website}</a></li>
-              <li><span>Price:</span> ${Price}</li>
-              <li><span>Sent:</span> ${Scent}</li>
-                <li><span>Size:</span> ${size}oz</li>
-                <li><span>Texture:</span> ${Texture}oz</li>
+              <li><span>Email:</span> ${email}</li>
+              <li><span>Birthdate:</span>${date_of_birth}</li>
+              <li><span>Job:</span> ${employment.title}</li>
                 <br>
-                <li> <h3><span>Product Includes:</span></h3>
+                <li> <h3><span>Address</span></h3>
                 <ul>
-                <li> ${Included.Includedone}</li>
-                <li> ${Included.Includedtwo}</li>
-                <li> ${Included.Includedthree}</li>
+                <li> <span>City:</span> ${address.city}</li>
+                <li><span>Street:</span> ${address.street_address}</li>
+                <li> <span>Country:</span> ${address.country}</li>
+                <li><span>State:</span> ${address.state}</li>
                 </ul>
                 </li>
               </ul>
@@ -44,4 +42,4 @@ function slimeTemplate({Name,avatar,website,Price,company,Texture,Scent,size,Inc
     const elm = document.createRange().createContextualFragment(template).children[0]
     return elm 
     }
-    export {slimeTemplate}
+    export {UserTemplate}
