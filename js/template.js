@@ -14,7 +14,7 @@ function UserTemplate({Name,website,avatar,Price,company,Texture,Scent,Included,
               <ul>
               <li><span>Company:</span> ${company}</li>
               <li><span>Price:</span>${Price}</li>
-              <li><span>WebSite:</span> ${website}</li>
+              <li><span>WebSite:</span><a href="${website}">${website}</a></li>
               <li><span>Size:</span> ${size}oz</li>
                 <br>
                 <li> <h3><span>Includeds</span></h3>
