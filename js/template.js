@@ -1,6 +1,4 @@
-function UserTemplate({address,avatar,first_name,last_name,email,date_of_birth,employment, ...users}){
-    // employee is a placeholder so can name it whatever you want to 
-    console.log(users)
+function UserTemplate({Name,website,avatar,Price,company,Texture,Scent,Included,size, ...slime}){
     const template = `
     
     <div class="slime">
@@ -9,21 +7,22 @@ function UserTemplate({address,avatar,first_name,last_name,email,date_of_birth,e
           
           <div class="profile">
             <div class="top-card">
-            <img src="${avatar}" alt="${first_name}" />
-            <h2>${first_name}  ${last_name}</h2>
+            <img src="${avatar}" alt="${Name}" />
+            <h2>${Name}</h2>
             </div>
             <div class="bio">
               <ul>
-              <li><span>Email:</span> ${email}</li>
-              <li><span>Birthdate:</span>${date_of_birth}</li>
-              <li><span>Job:</span> ${employment.title}</li>
+              <li><span>Company:</span> ${company}</li>
+              <li><span>Price:</span>${Price}</li>
+              <li><span>WebSite:</span> ${website}</li>
+              <li><span>Size:</span> ${size}oz</li>
                 <br>
-                <li> <h3><span>Address</span></h3>
+                <li> <h3><span>Includeds</span></h3>
                 <ul>
-                <li> <span>City:</span> ${address.city}</li>
-                <li><span>Street:</span> ${address.street_address}</li>
-                <li> <span>Country:</span> ${address.country}</li>
-                <li><span>State:</span> ${address.state}</li>
+                <li>${Included.Includedone}</li>
+                <li>${Included.Includedtwo}</li>
+                <li>${Included.Includedthree}</li>
+                
                 </ul>
                 </li>
               </ul>
@@ -33,12 +32,6 @@ function UserTemplate({address,avatar,first_name,last_name,email,date_of_birth,e
     
     
     `
-    //return template 
-    // what he would do 
-    //1.  Retun the template as a string with that data if there was no interactivity ( InsertAdjecentHtml)
-    
-    
-    // return it as an element if there was interactivity
     const elm = document.createRange().createContextualFragment(template).children[0]
     return elm 
     }
